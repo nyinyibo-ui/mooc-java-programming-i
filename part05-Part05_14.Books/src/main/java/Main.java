@@ -18,10 +18,17 @@ public class Main {
             System.out.println("Publication year:");
             int publicationYear = Integer.valueOf(scanner.nextLine());
             Book book = new Book(name, publicationYear);
-            books.add(book);
+
+            // if the book is alreay in the list
+            if (books.contains(book)) {
+                System.out.println("The book is already on the list. Let's not add the same book again.");
+            } else {
+                books.add(book);
+
+            }
 
         }
-        
+
         // NB! Don't alter the line below!
         System.out.println("Thank you! Books added: " + books.size());
     }
