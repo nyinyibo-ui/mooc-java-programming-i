@@ -1,5 +1,0 @@
-saul,32
-tina,30
-aaron,1
-matt,44
-lena,0
