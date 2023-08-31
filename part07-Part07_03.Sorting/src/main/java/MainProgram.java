@@ -66,7 +66,13 @@ public class MainProgram {
         System.out.println(Arrays.toString(array));
 
         // start from 0
-        for (int start = 0; start < array.length; start ++) {
+        /*
+        -Examine the array starting from index 0. Swap the following two numbers with each other: the number at index 0, and the smallest number in the array starting from index 0.
+        -Examine the array starting from index 1. Swap the following two numbers with each other: the number at index 1, and the smallest number in the array starting from index 1.
+        -Examine the array starting from index 2. Swap the following two numbers with each other: the number at index 2, and the smallest number in the array starting from index 2.
+        -Etc.
+         */
+        for (int start = 0; start < array.length; start++) {
             MainProgram.swap(array, indexOfSmallestFrom(array, start), start);
             System.out.println(Arrays.toString(array));
         }
