@@ -5,12 +5,7 @@ public class MainProgram {
 
     public static void main(String[] args) {
         // write your test code here
-        // indices:       0  1  2  3   4
-//        int[] numbers = {-1, 6, 9, 8, 12};
-//        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 0));
-//        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 1));
-//        System.out.println(MainProgram.indexOfSmallestFrom(numbers, 2));
-
+        // indices:       0  1  2  3   4  5  6  7
         int[] numbers = {8, 7, 6, 5, 4, 3, 2, 1, 0};
 
         sort(numbers);
