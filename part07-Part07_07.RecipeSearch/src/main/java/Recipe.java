@@ -39,6 +39,15 @@ public class Recipe {
         return this.name+", cooking time: "+this.duration;
     }
     
+    public boolean foundIngredients(String word){
+        for (String ingredient: this.ingredients){
+            if (ingredient.equals(word)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
 }
 
 

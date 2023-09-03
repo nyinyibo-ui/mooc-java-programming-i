@@ -28,7 +28,6 @@ public class UserInterface {
         readFile();
         System.out.println("");
         printCommand();
-        System.out.println("");
         readCommand();
     }
 
@@ -81,16 +80,27 @@ public class UserInterface {
     public void readCommand() {
 
         while (true) {
+            System.out.println("");
             System.out.println("Enter command: ");
             String command = scanner.nextLine();
-            if (command.equals("stop")){
+            if (command.equals("stop")) {
                 break;
             }// initiate list command
-            else  if (command.equals("list")) {
+            else if (command.equals("list")) {
+                System.out.println("");
                 list();
+            }// initiate find name command
+            else if (command.equals("find name")) {
+                findByName();
+            }// initiate find by cooking time command
+            else if (command.equals("find cooking time")) {
+                findByCookingTime();
+            }// initiate find by ingredients command
+            else if (command.equals("find ingredient")) {
+                findByIngredients();
             }
+
         }
-        System.out.println("");
 
     }
 
@@ -98,6 +108,39 @@ public class UserInterface {
     public void list() {
         System.out.println("Rcipes:");
         for (Recipe recipe : register.getRecipeList()) {
+            System.out.println(recipe);
+        }
+    }
+
+    //command find by name
+    public void findByName() {
+        System.out.println("Searched word: ");
+        String searchedWord = scanner.nextLine();
+
+        System.out.println("Recipes: ");
+        for (Recipe recipe : register.findByName(searchedWord)) {
+            System.out.println(recipe);
+        }
+    }
+
+    // command findCookingTime
+    public void findByCookingTime() {
+        System.out.println("Max cooking time: ");
+        int maxTime = Integer.valueOf(scanner.nextLine());
+
+        System.out.println("Recipes: ");
+        for (Recipe recipe : register.findByCookingTime(maxTime)) {
+            System.out.println(recipe);
+        }
+    }
+
+    // command find By Ingredients
+    public void findByIngredients() {
+        System.out.println("Ingredients");
+        String ingredient=scanner.nextLine();
+        
+        System.out.println("Recipes: ");
+        for (Recipe recipe : register.findByIngredients(ingredient)) {
             System.out.println(recipe);
         }
     }
