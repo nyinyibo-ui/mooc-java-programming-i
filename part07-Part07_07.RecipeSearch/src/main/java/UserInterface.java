@@ -137,8 +137,8 @@ public class UserInterface {
     // command find By Ingredients
     public void findByIngredients() {
         System.out.println("Ingredients");
-        String ingredient=scanner.nextLine();
-        
+        String ingredient = scanner.nextLine();
+
         System.out.println("Recipes: ");
         for (Recipe recipe : register.findByIngredients(ingredient)) {
             System.out.println(recipe);
