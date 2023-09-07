@@ -22,7 +22,6 @@ public class UserInterface {
 
     public void start() {
         readCommand();
-        System.out.println(register.getList());
     }
 
     public void readCommand() {
@@ -36,6 +35,10 @@ public class UserInterface {
                 add();
             }else if (command.equals("Observation")){
                 observation();
+            }else if(command.equals("All")){
+                list();
+            }else if(command.equals("One")){
+                one();
             }
         }
     }
@@ -56,6 +59,23 @@ public class UserInterface {
         boolean foundBird=register.observeBird(name);
         if(foundBird==false){
             System.out.println("Not a bird!");
+        }
+    }
+    
+    public void list(){
+        for(Bird bird :register.getList()){
+            System.out.println(bird);
+        }
+    }
+    
+    public void one(){
+        System.out.println("Bird?");
+        String name=scanner.nextLine();
+        
+        for(Bird bird: this.register.getList()){
+            if (bird.getName().equals(name)){
+                System.out.println(bird);
+            }
         }
     }
 }
