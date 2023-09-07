@@ -11,8 +11,7 @@ public class mainProgram {
         Scanner scanner = new Scanner(System.in);
         BirdRegister register=new BirdRegister();
         
-        UserInterface ui=new UserInterface(scanner,register);
-        
+        UserInterface ui=new UserInterface(scanner,register);        
         ui.start();
 
     }
